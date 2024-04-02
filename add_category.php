@@ -30,7 +30,7 @@
       ?>
 
 
-     <form action="add_category.php" method="GET">
+     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET">
         Category: 
         <input type="text" name="category_name" id=""> <br> <br>
         Entry Date: 

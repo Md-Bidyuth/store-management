@@ -22,7 +22,7 @@
             $category_id = $data_array['category_id'];
             $category_name = $data_array['category_name'];
             $category_entry_date = $data_array['category_entry_date'];
-
+    
           }
 
           if(isset($_GET['category_name'])) {
