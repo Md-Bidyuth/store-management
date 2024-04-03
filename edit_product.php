@@ -76,7 +76,7 @@
         </select> <br> <br>
         Product Code: <input type="text" name="product_code" id="" value="<?php echo  $product_code ?>"> <br> <br>
         Product Entry Date: <input type="date" name="product_entry_date" id="" value="<?php echo  $product_entry_date ?>"> <br> <br>
-        <input type="submit" value="Add">
+        <input type="submit" value="submit">
      </form>
 </body>
 </html>
