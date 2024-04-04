@@ -2,7 +2,11 @@
   require('db_connection.php');
   include('template.php');
   require('my_function.php');
-      
+  session_start();
+  $user_first_name = $_SESSION['user_first_name'];
+  $user_last_name = $_SESSION['user_last_name'];
+
+  if(!empty($user_first_name) && !empty($user_last_name)) { 
 ?>
 
 
@@ -14,7 +18,7 @@
     <title>Edit User</title>
 </head>
 <body>
-      <?php
+      <?php 
          if(isset($_GET['id'])) {
             $id = $_GET['id'];
 
@@ -68,3 +72,9 @@
      </form>
 </body>
 </html>
+
+<?php 
+     } else {
+        header('location: login.php');
+     }  
+?>

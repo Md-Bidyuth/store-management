@@ -2,6 +2,11 @@
   require('db_connection.php');
   include('template.php');
   require('my_function.php');
+  session_start();
+  $user_first_name = $_SESSION['user_first_name'];
+  $user_last_name = $_SESSION['user_last_name'];
+
+  if(!empty($user_first_name) && !empty($user_last_name)) { 
       
 ?>
 
@@ -67,9 +72,9 @@
                  $data_name = $data_array['product_name'];
              ?>
           
-          <option value='<?php echo $data_id ?>' <?php if ($data_id == $spend_product_name) { echo 'selected';} ?> > <?php echo $data_name; ?> </option>
+          <option value="<?php echo $data_id; ?>" <?php if ($data_id == $spend_product_name) { echo 'selected';} ?> > <?php echo $data_name; ?> </option>
            
-             <?php } ?>
+          <?php } ?>
         </select> <br> <br>
         Product Quantity: <input type="number" name="spend_product_quantity" id="" value="<?php echo $spend_product_quantity; ?>"> <br> <br>
         Product Entry Date: <input type="date" name="spend_product_entry_date" id="" value="<?php echo $spend_product_entry_date; ?>"> <br> <br>
@@ -77,3 +82,9 @@
      </form>
 </body>
 </html>
+
+<?php 
+     } else {
+        header('location: login.php');
+     }  
+?>

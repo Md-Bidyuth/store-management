@@ -13,6 +13,11 @@
     $all_product[$product_id] = $product_name;
  };
 
+ session_start();
+  $user_first_name = $_SESSION['user_first_name'];
+  $user_last_name = $_SESSION['user_last_name'];
+
+  if(!empty($user_first_name) && !empty($user_last_name)) { 
 
 ?>
 
@@ -57,3 +62,9 @@
     
 </body>
 </html>
+
+<?php 
+     } else {
+        header('location: login.php');
+     }  
+?>
