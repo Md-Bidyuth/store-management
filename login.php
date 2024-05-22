@@ -11,13 +11,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <?php include('template.php'); ?>
+    <?php include('template.php');?>
+    <style>
+    .custom-background {
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('./store-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 500px; 
+    }
+
+    body, .btn-login {
+        color: #e2e1df;
+    }
+    
+  </style>
 </head>
 <body>
        
-       <div class="container bg-dark bg-opacity-25 p-20">
+       <div class="container bg-dark bg-opacity-25 p-20 custom-background">
           <div class="row">
-              <div class="w-50 mx-auto bg-secondary bg-opacity-50 p-10">
+              <div class="w-50 mx-auto bg-secondary bg-opacity-50 p-10 ">
               <?php
                     if(isset($_POST['user_email'])) {
                     $user_email = $_POST['user_email'];
@@ -52,7 +66,7 @@
                 
                     Email: <input type="email" name="user_email" id="" class="form-control bg-light bg-opacity-75"> <br> <br>
                     Password: <input type="password" name="user_password" id="" class="form-control bg-light bg-opacity-75"> <br> <br>
-                    <input type="submit" class="btn btn-secondary" value="Login">
+                    <input type="submit" class="btn btn-secondary btn-login" value="Login">
                 </form>
               </div>
           </div>
